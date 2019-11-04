@@ -14,5 +14,5 @@ do
 			indicator = "chatPerforming",
 			deadCanChat = true
 		})
-	end)
+	end) 
 end
