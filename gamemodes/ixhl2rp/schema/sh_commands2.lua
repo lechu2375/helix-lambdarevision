@@ -14,6 +14,9 @@ ix.command.Add("sprobuj", {
 	arguments = ix.type.text,
 	OnRun = function(self, client, text)
         local str
+        if not string.EndsWith(text,".") then
+            text = text.."."
+        end
         local git = tobool(math.random(0, 1))
         if git then 
             str= " odniósł sukces próbując "..text
@@ -21,6 +24,8 @@ ix.command.Add("sprobuj", {
             str = " zawiódł próbując "..text
         end
 		ix.chat.Send(client, "try", str)
+        
+
 	end
 })
 end
