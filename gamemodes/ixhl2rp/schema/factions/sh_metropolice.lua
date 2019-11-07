@@ -1,6 +1,6 @@
 
 FACTION.name = "Metropolice Force"
-FACTION.description = "A metropolice unit working as Civil Protection."
+FACTION.description = "Jednostka metropolice działająca jako ochrona cywilna."
 FACTION.color = Color(50, 100, 150)
 FACTION.pay = 10
 FACTION.models = {"models/police.mdl"}

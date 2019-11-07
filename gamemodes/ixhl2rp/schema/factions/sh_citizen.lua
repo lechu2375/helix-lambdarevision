@@ -1,6 +1,6 @@
 
-FACTION.name = "Citizen"
-FACTION.description = "A regular human citizen enslaved by the Universal Union."
+FACTION.name = "Obywatel"
+FACTION.description = "Zwykły obywatel zniewolony przez Uniwersalną Unie."
 FACTION.color = Color(150, 125, 100, 255)
 FACTION.isDefault = true
 

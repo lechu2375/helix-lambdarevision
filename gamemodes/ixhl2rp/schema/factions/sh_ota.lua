@@ -1,6 +1,6 @@
 
 FACTION.name = "Overwatch Transhuman Arm"
-FACTION.description = "A transhuman Overwatch soldier produced by the Combine."
+FACTION.description = "Żołnierz transhuman Overwatch wytworzony przez Kombinat."
 FACTION.color = Color(150, 50, 50, 255)
 FACTION.pay = 40
 FACTION.models = {"models/combine_soldier.mdl"}
