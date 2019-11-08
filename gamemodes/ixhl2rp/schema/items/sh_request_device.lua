@@ -1,5 +1,5 @@
 
 ITEM.name = "Request Device"
 ITEM.model = Model("models/gibs/shield_scanner_gib1.mdl")
-ITEM.description = "A box with rounded corners, housing two buttons."
+ITEM.description = "Pudełko z zaokrąglonymi narożnikami, mieszczące dwa guziki."
 ITEM.price = 20

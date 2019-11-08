@@ -1,7 +1,7 @@
 
 ITEM.name = "Health Kit"
 ITEM.model = Model("models/items/healthkit.mdl")
-ITEM.description = "A white packet filled with medication."
+ITEM.description = "Biała paczka pełna leków."
 ITEM.category = "Medical"
 ITEM.price = 65
 

@@ -1,7 +1,7 @@
 
-ITEM.name = "Bandage"
+ITEM.name = "Bandaż"
 ITEM.model = Model("models/props_wasteland/prison_toiletchunk01f.mdl")
-ITEM.description = "A small roll of hand-made gauze."
+ITEM.description = "Mała rolka ręcznie robionej gazy."
 ITEM.category = "Medical"
 ITEM.price = 18
 

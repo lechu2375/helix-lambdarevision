@@ -1,8 +1,8 @@
 
-ITEM.name = "Sparkling Breen's Water"
-ITEM.model = Model("models/props_junk/popcan01a.mdl")
+ITEM.name = "Puszka wody gazowanej"
+ITEM.model = Model("models/props_nunk/popcan01a.mdl")
 ITEM.skin = 1
-ITEM.description = "A red aluminium can of carbonated water."
+ITEM.description = "Aluminiowa puszka gazowanej wody."
 ITEM.category = "Consumables"
 
 ITEM.functions.Drink = {

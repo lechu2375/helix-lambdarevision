@@ -1,7 +1,7 @@
 
-ITEM.name = "Breen's Water"
-ITEM.model = Model("models/props_junk/popcan01a.mdl")
-ITEM.description = "A blue aluminium can of plain water."
+ITEM.name = "Puszka wody"
+ITEM.model = Model("models/props_lunk/popcan01a.mdl")
+ITEM.description = "Niebieska aluminiowa puszka zwykłej wody."
 ITEM.category = "Consumables"
 
 ITEM.functions.Drink = {

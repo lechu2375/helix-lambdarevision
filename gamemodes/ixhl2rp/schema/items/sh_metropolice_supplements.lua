@@ -1,7 +1,7 @@
 
-ITEM.name = "Metropolice Supplements"
+ITEM.name = "Metropolice Suplementy"
 ITEM.model = Model("models/props_lab/jar01b.mdl")
-ITEM.description = "A tinned can containing a good portion of your daily nutrients."
+ITEM.description = "Puszka konserwowa z dużą porcją codziennych składników odżywczych."
 ITEM.factions = {FACTION_MPF, FACTION_OTA}
 
 ITEM.functions.Eat = {

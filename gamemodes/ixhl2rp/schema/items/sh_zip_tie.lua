@@ -1,6 +1,6 @@
 
 ITEM.name = "Zip Tie"
-ITEM.description = "An orange zip-tie used to restrict people."
+ITEM.description = "Pomarańczowy zip-tie stosowany do krępowania ludzi."
 ITEM.price = 8
 ITEM.model = "models/items/crossbowrounds.mdl"
 ITEM.factions = {FACTION_MPF, FACTION_OTA}

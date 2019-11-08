@@ -1,7 +1,7 @@
 
-ITEM.name = "Ration"
+ITEM.name = "Racje"
 ITEM.model = Model("models/weapons/w_package.mdl")
-ITEM.description = "A shrink-wrapped packet containing some food and money."
+ITEM.description = "Opakowanie termokurczliwe zawierające jedzenie i pieniądze."
 ITEM.items = {"supplements", "water"}
 
 ITEM.functions.Open = {

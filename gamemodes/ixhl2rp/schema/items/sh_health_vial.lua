@@ -1,7 +1,7 @@
 
 ITEM.name = "Health Vial"
 ITEM.model = Model("models/healthvial.mdl")
-ITEM.description = "A small vial with green liquid."
+ITEM.description = "Mała fiolka z zielonym płynem."
 ITEM.category = "Medical"
 ITEM.price = 40
 
