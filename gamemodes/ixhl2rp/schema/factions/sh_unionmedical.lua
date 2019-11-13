@@ -1,5 +1,5 @@
 FACTION.name = "Union Medical"
-FACTION.description = "A metropolice unit working as Civil Protection."
+FACTION.description = "Uformowane spośród przedwojennych lekarzy, studentów i studentek medycyny i pielęgniarstwa, a także wszystkich wystarczająco sprytnych, by obandażować kogoś rannego przez maszynę podczas cyklu pracy.\n Nadrzędnym celem UM jest kontrola stanu zdrowia mieszkańców, a także kontrola warunków sanitarnych w Mieście."
 FACTION.color = Color(255, 121, 121)
 FACTION.pay = 5
 FACTION.isDefault = false
