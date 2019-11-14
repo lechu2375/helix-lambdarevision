@@ -27,6 +27,8 @@ function FACTION:OnTransfered(client)
 	character:SetModel(self.models[1])
 end
 
+
+--models/dpfilms/metropolice/playermodels/pm_urban_police.mdl
 function FACTION:OnNameChanged(client, oldValue, value)
 	local character = client:GetCharacter()
 
