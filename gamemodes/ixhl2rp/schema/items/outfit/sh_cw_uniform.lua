@@ -1,32 +1,23 @@
 
-ITEM.name = "Uniform członka CW"
-ITEM.description = "Uniform noszony przez członków CW"
+ITEM.name = "Uniform członka CWU"
+ITEM.description = "Uniform noszony przez członków CWY"
 ITEM.category = "Clothing"
 
-ITEM.zjebanenazwy = {
-    ["01"] = "wichacks/joenovest.mdl",
-    ["02"] = "wichacks/tednovest.mdl",
-    ["03"] = "wichacks/vannovest.mdl",
-    ["04"] = "wichacks/ericnovest.mdl",
-    ["05"] = "wichacks/artnovest.mdl",
-    ["06"] = "models/wichacks/sandronovest.mdl",
-    ["07"] = "models/wichacks/erdimnovest.mdl",
-    ["08"] = "models/wichacks/vancenovest.mdl",
-    ["09"] = "models/wichacks/mikenovest.mdl",
-}
 
 ITEM.replacements = {
-	{"humans/group01/f", "models/army/f"},
-	{"humans/group01/male_01", "wichacks/artnovest"},
-    {"humans/group0%d/Male_01",ITEM.zjebanenazwy[1]},
-    {"humans/group0%d/Male_02",ITEM.zjebanenazwy[2]},
+	{"models/army", "c24cwuworkersnc"},
+    {"wichacks/artnovest.mdl", "c24cwuworkersnc/male_05.mdl"},
+    {"wichacks/erdimnovest.mdl","c24cwuworkersnc/male_07.mdl"},
+    { "wichacks/ericnovest.mdl","c24cwuworkersnc/male_04.mdl"},
+    { "wichacks/joenovest.mdl","c24cwuworkersnc/male_03.mdl"},
+    {"wichacks/mikenovest.mdl","c24cwuworkersnc/male_09.mdl"},
+    {"wichacks/sandronovest.mdl","c24cwuworkersnc/male_08.mdl"},
+    {"wichacks/tednovest.mdl","c24cwuworkersnc/male_02.mdl"},
+    {"wichacks/vannovest.mdl","c24cwuworkersnc/male_01.mdl"},
+    {"wichacks/vancenovest.mdl","c24cwuworkersnc/male_10.mdl"},
+    {"humans/group01","c24cwuworkersnc"},
+    {"humans/group02","c24cwuworkersnc"}
+
 }
 
 
-
---esa zioemk says "Models/models/army/female_01.mdl."
---esa zioemk says "Models/Humans/Group01/Female_01.mdl."
-
---models/wichacks/artnovest.mdl
---models/Humans/Group01/Male_01.mdl
-models/Humans/Group01/Male_01.mdl
