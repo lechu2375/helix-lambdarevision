@@ -5,9 +5,8 @@ ITEM.category = "Clothing"
 
 ITEM.replacements = {
 
-    {"humans","betacz"},
-    {"humans","betacz"}
+    {"humans/group01","betacz/group02"},
+    {"humans/group02","betacz/group02"}
 
 }
-
 

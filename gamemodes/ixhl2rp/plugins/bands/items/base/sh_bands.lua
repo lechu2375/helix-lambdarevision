@@ -36,7 +36,7 @@ ITEM.functions.Equip = {
 		item:SetData("equip", true)
         item.player:SetNW2String("band",item.band)
 
-		item:OnEquipped()
+		--item:OnEquipped()
 		return false
 	end,
 	OnCanRun = function(item)
