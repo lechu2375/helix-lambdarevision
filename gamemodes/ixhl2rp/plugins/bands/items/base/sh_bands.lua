@@ -4,6 +4,14 @@ ITEM.description = "Opaska lojalisty."
 ITEM.category = "Bands"
 ITEM.band = false
 
+if (CLIENT) then
+	function ITEM:PaintOver(item, w, h)
+		if (item:GetData("equip")) then
+			surface.SetDrawColor(110, 255, 110, 100)
+			surface.DrawRect(w - 14, h - 14, 8, 8)
+		end
+	end
+end
 
 ITEM.functions.Equip = {
 	name = "Equip",
