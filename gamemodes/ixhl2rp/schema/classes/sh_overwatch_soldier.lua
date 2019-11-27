@@ -6,7 +6,8 @@ function CLASS:OnSet(client)
 	local character = client:GetCharacter()
 
 	if (character) then
-		character:SetModel("models/combine_soldier.mdl")
+		character:SetModel("models/ninja/combine_soldier_reimagine.mdl")
+		client:SetSkin(0)
 	end
 end
 
