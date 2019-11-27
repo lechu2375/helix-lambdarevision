@@ -273,3 +273,14 @@ netstream.Hook("ViewObjectives", function(data)
 	Schema:AddCombineDisplayMessage("@cViewObjectives")
 	vgui.Create("ixViewObjectives"):Populate(data)
 end)
+
+------OTA disappear from scoreboard----------
+function Schema:ShouldShowPlayerOnScoreboard(client)
+	
+	if LocalPlayer():GetCharacter():GetFaction()~=FACTION_OTA then
+		if client:GetCharacter():GetFaction()==FACTION_OTA then 
+			return false
+		end
+	end
+end
+-----
