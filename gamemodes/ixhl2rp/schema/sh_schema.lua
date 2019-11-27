@@ -21,6 +21,8 @@ ix.util.Include("meta/sh_player.lua")
 ix.util.Include("meta/sv_player.lua")
 ix.util.Include("meta/sh_character.lua")
 
+ix.util.IncludeDir("util")
+
 ix.flag.Add("v", "Access to light blackmarket goods.")
 ix.flag.Add("V", "Access to heavy blackmarket goods.")
 
@@ -177,3 +179,10 @@ do
 
 	ix.chat.Register("broadcast", CLASS)
 end
+
+
+
+ix.anim.SetModelClass("models/ninja/combine_soldier_reimagine.mdl", "overwatch")
+ix.anim.SetModelClass("models/bloocobalt/combine/combine_e.mdl", "overwatch")
+ix.anim.SetModelClass("models/bloocobalt/combine/combine_s.mdl", "overwatch")
+
