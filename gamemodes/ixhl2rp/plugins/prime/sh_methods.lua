@@ -3,6 +3,7 @@
 local primeGroups = {
     ["superadmin"] = true
 }
+
 local PLAYER = FindMetaTable("Player")
 
 function PLAYER:IsPrime()
@@ -11,18 +12,18 @@ function PLAYER:IsPrime()
         return true
     end
 end
+
 if CLIENT then
 
-    function PLUGIN:GetScoreboardDescriptionColor(client)
-        if client:IsPrime() then
-            return Color(254, 202, 87)
-        end
+    function PLUGIN:PopulateCharacterInfo(client, character, tooltip)
+        timer.Simple(.005, function()
+            local description = tooltip:GetRow("description")
+            if client:IsPrime() and description then
+                description:SetTextColor(Color(254, 202, 87))-- set text to red
+            end
+        end)
     end
 
-    function PLUGIN:GetDescriptionColor(client)
-        if client:IsPrime() then
-            return Color(254, 202, 87)
-        end
-    end
-    
 end
+
+    
