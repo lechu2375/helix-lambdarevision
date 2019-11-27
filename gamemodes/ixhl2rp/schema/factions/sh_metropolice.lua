@@ -3,7 +3,7 @@ FACTION.name = "Metropolice Force"
 FACTION.description = "Jednostka metropolice działająca jako ochrona cywilna."
 FACTION.color = Color(50, 100, 150)
 FACTION.pay = 10
-FACTION.models = {"models/police.mdl"}
+FACTION.models = {"models/dpfilms/metropolice/playermodels/pm_urban_police.mdl"}
 FACTION.weapons = {"ix_stunstick"}
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
@@ -34,25 +34,11 @@ function FACTION:OnNameChanged(client, oldValue, value)
 
 	if (!Schema:IsCombineRank(oldValue, "RCT") and Schema:IsCombineRank(value, "RCT")) then
 		character:JoinClass(CLASS_MPR)
-	elseif (!Schema:IsCombineRank(oldValue, "OfC") and Schema:IsCombineRank(value, "OfC")) then
-		character:SetModel("models/policetrench.mdl")
-	elseif (!Schema:IsCombineRank(oldValue, "EpU") and Schema:IsCombineRank(value, "EpU")) then
-		character:JoinClass(CLASS_EMP)
-
-		character:SetModel("models/leet_police2.mdl")
-	elseif (!Schema:IsCombineRank(oldValue, "DvL") and Schema:IsCombineRank(value, "DvL")) then
-		character:SetModel("models/eliteshockcp.mdl")
-	elseif (!Schema:IsCombineRank(oldValue, "SeC") and Schema:IsCombineRank(value, "SeC")) then
-		character:SetModel("models/sect_police2.mdl")
 	elseif (!Schema:IsCombineRank(oldValue, "SCN") and Schema:IsCombineRank(value, "SCN")
 	or !Schema:IsCombineRank(oldValue, "SHIELD") and Schema:IsCombineRank(value, "SHIELD")) then
 		character:JoinClass(CLASS_MPS)
 
 		Schema:CreateScanner(client, Schema:IsCombineRank(client:Name(), "SHIELD") and "npc_clawscanner" or nil)
-	end
-
-	if (!Schema:IsCombineRank(oldValue, "GHOST") and Schema:IsCombineRank(value, "GHOST")) then
-		character:SetModel("models/eliteghostcp.mdl")
 	end
 end
 
