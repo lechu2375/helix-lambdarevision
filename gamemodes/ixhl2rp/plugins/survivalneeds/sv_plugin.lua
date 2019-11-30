@@ -64,6 +64,10 @@
 			if char:GetData("hunger", 100) < 0 then
 				char:SetData("hunger", 0)
 				self:SetLocalVar("hunger", 0)
+				if self:Health()>30 then
+					self:TakeDamage(5)
+					self:Notify("Twoje ciało zaczyna pożywiać się twoimi mięśniami.")
+				end
 			end
 		end
 	end

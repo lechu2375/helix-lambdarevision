@@ -31,3 +31,12 @@ ix.bar.Add(function()
 
 		return var, status
 	end, Color(0, 119, 101), nil, "thirst")
+
+function PLUGIN:RenderScreenspaceEffects()
+	local ply = LocalPlayer()
+	if ply:GetCharacter() then 
+		if ply:GetLocalVar("thirst", 0)<=30 then
+			DrawToyTown( 4, ScrH())
+		end
+	end
+end
