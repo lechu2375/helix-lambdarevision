@@ -50,7 +50,7 @@ local hunger_items = {
 	["melon"] = {
 		["name"] = "Melon",
 		["model"] = "models/props_junk/watermelon01.mdl",
-		["desc"] = "A freshly grown watermelon, presumably by the Railroad.",
+		["desc"] = "Zielony owoc, posiadający twardą skorupę.",
 		["illegal"] = true,
 		["hunger"] = 40,
 		["thirst"] = 40,
@@ -58,17 +58,17 @@ local hunger_items = {
 		["height"] = 2
 	},
 	["bleach"] = {
-		["name"] = "Bleach",
+		["name"] = "Wybielacz",
 		["model"] = "models/props_junk/garbage_plasticbottle001a.mdl",
-		["desc"] = "A bottle of bleach, a common houseware product, this is a non-flammable production unit, still. Drinking it isn't a good idea.",
+		["desc"] = "Butelka wybielacza, popularnego produktu gospodarstwa domowego, to wciąż niepalna jednostka produkcyjna. Picie go nie jest dobrym pomysłem.",
 		["hunger"] = -50,
 		["thirst"] = -50
 	},
 
 	["vegetable_oil"] = {
-		["name"] = "Vegetable Oil",
+		["name"] = "Olej roślinny",
 		["model"] = "models/props_junk/garbage_plasticbottle002a.mdl",
-		["desc"] = "A bottle of vegetable oil, a common cooking product, drinking it raw isn't a good idea.",
+		["desc"] = "Butelka oleju roślinnego, popularnego produktu do gotowania. Picie go na surowo nie jest dobrym pomysłem.",
 		["hunger"] = -25,
 		["thirst"] = -25
 	},
@@ -76,21 +76,21 @@ local hunger_items = {
 	["minimal_supplements"] = {
 		["name"] = "Minimal Survival Supplement",
 		["model"] = "models/gibs/props_canteen/vm_sneckol.mdl",
-		["desc"] = "A small assortment of vitamins and food items, as well as a small packet of pre-packaged water, designed to keep you minimally fed and operating.",
+		["desc"] = "Mały asortyment witamin i artykułów spożywczych, a także niewielka paczka wstępnie zapakowanej wody, zaprojektowana, aby nakarmić i utrzymać cię na nogach.",
 		["hunger"] = 10,
 		["thirst"] = 10
 	},
 	["carton_of_milk"] = {
-		["name"] = "Carton of Milk",
+		["name"] = "Karton Mleka",
 		["model"] = "models/props_junk/garbage_milkcarton002a.mdl",
-		["desc"] = "A bottle of synthetic milk, produced by the Universal Union.",
+		["desc"] = "Karton wypełniony mlekiem.",
 		["hunger"] = 0,
 		["thirst"] = 15
 	},
 	["can_of_beans"] = {
-		["name"] = "Can of Beans",
+		["name"] = "Puszka fasoli",
 		["model"] = "models/props_junk/garbage_metalcan001a.mdl",
-		["desc"] = "A can of grown beans, produced by the Underground Railroad for morale.",
+		["desc"] = "Puszka wypełniona dorodnymi fasolkami.",
 		["hunger"] = 20,
 		["thirst"] = 0
 	},
@@ -103,9 +103,9 @@ local hunger_items = {
 	},--]]
 
 	["water"] = {
-		["name"] = "Breen's Water",
+		["name"] = "Woda Breen'a",
 		["model"] = "models/props_junk/PopCan01a.mdl",
-		["desc"] = "A can of Breen's water.",
+		["desc"] = "Puszka wody Breen'a.",
 		["hunger"] = 0,
 		["thirst"] = 5
 	},
@@ -113,31 +113,31 @@ local hunger_items = {
 	["normal_beer"] = {
 		["name"] = "Bottle of Standard Lager",
 		["model"] = "models/props_junk/garbage_glassbottle003a.mdl",
-		["desc"] = "A bottle of standard craft beer, produced by the Union, the label reads 7.3% alcohol content.",
+		["desc"] = "Butelka piwa, produkowana przez Unię, na etykiecie widnieje 7,3% zawartości alkoholu.",
 		["hunger"] = -5,
 		["thirst"] = 10,
 		["empty"] = "empty_bottle",
 	},
 
 	["big_beer"] = {
-		["name"] = "40oz Bottle of Lager",
+		["name"] = "40oz Butelka Piwa",
 		["model"] = "models/props_junk/garbage_glassbottle001a.mdl",
-		["desc"] = "A large 40oz Bottle of Lager, produced by the Union, the label reads 7.3% alcohol content.",
+		["desc"] = "Duża Butelka piwa, wyprodukowana przez Unię, zawierająca 7,3% zawartości alkoholu.",
 		["hunger"] = -15,
 		["thirst"] = 30
 	},
 
 	["big_water"] = {
-		["name"] = "2L Water",
+		["name"] = "2L Wody",
 		["model"] = "models/props_junk/garbage_plasticbottle003a.mdl",
-		["desc"] = "A 2L jug of water.",
+		["desc"] = "2 Litrowa butelka wody.",
 		["hunger"] = 2,
 		["thirst"] = 45
 	},
 	["oat_cookies"] = {
-		["name"] = "Oat Cookies",
+		["name"] = "Ciasteczka Owsiane",
 		["model"] = "models/pg_plops/pg_food/pg_tortellinac.mdl",
-		["desc"] = "A box of Yayoga Oat Cookies.",
+		["desc"] = "Pudełko ciasteczek owsianych Yayoga.",
 		["hunger"] = 5,
 		["thirst"] = -3
 	},
@@ -145,33 +145,33 @@ local hunger_items = {
 	["hydration_pack"] = {
 		["name"] = "Minimal Hydration Pack",
 		["model"] = "models/foodnhouseholdaaaaa/combirationa.mdl",
-		["desc"] = "A minimal hydration pack, contains 12oz water.",
+		["desc"] = "Mały pakiet, zwierający 12 uncji wody.",
 		["hunger"] = 0,
 		["thirst"] = 35
 	},
 	["standard_hydration_pack"] = {
-		["name"] = "Standard Hydration Pack",
+		["name"] = "Standardowy pakiet nawodnienia",
 		["model"] = "models/foodnhouseholdaaaaa/combirationb.mdl",
-		["desc"] = "A standard hydration pack, contains 32oz water.",
+		["desc"] = "Pakiet zawierający 32 uncję wody.",
 		["hunger"] = 0,
 		["thirst"] = 65
 	},
 	["standard_supplement"] = {
-		["name"] = "Standard Supplements",
+		["name"] = "Suplementy",
 		["model"] = "models/props_lab/jar01b.mdl",
-		["desc"] = "A standard supplement jar containing a few food items.",
+		["desc"] = "Biały plastikowy słoik, zawierający porcję codziennych składników odżywczych.",
 		["hunger"] = 25,
 		["thirst"] = 0
 	},
 	["cold_cooked_meat"] = {
-		["name"] = "Cold Cooked Fish",
-		["desc"] = "A 0.2lb can of cooked meat, it's cold.",
+		["name"] = "Konserwowa Ryba",
+		["desc"] = "Garść przegotowanego, zimnego mięsa.",
 		["hunger"] = 10,
 		["model"] = "models/bioshockinfinite/cardine_can_open.mdl"
 	},
 	["orange"] = {
-		["name"] = "Orange",
-		["desc"] = "An Orange, what more is there to say?.",
+		["name"] = "Pomarańcz",
+		["desc"] = "Zwykła, lekko twarda pomarańcza.",
 		["hunger"] = 12,
 		["model"] = "models/bioshockinfinite/hext_orange.mdl"
 	}

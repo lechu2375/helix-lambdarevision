@@ -26,7 +26,7 @@ ix.bar.Add(function()
 		elseif var < 0.6 then
 			status = "Spragniony"
 		elseif var < 0.8 then
-			status = "Napity"
+			status = "Nawodniony"
 		end
 
 		return var, status
