@@ -1,5 +1,5 @@
 ITEM.name = "357"
-ITEM.description = "A sidearm utilising .357 Caliber ammunition."
+ITEM.description = "Broń boczna z amunicją kalibru .357."
 ITEM.model = "models/weapons/w_357.mdl"
 ITEM.class = "weapon_357"
 ITEM.weaponCategory = "sidearm"

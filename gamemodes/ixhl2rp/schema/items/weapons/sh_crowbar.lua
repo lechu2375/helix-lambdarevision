@@ -1,5 +1,5 @@
-ITEM.name = "Crowbar"
-ITEM.description = "A slightly rusty looking crowbar."
+ITEM.name = "Łom"
+ITEM.description = "Lekko zardzewiały łom."
 ITEM.model = "models/weapons/w_crowbar.mdl"
 ITEM.class = "weapon_crowbar"
 ITEM.weaponCategory = "melee"

@@ -1,5 +1,5 @@
 ITEM.name = "MP7"
-ITEM.description = "A compact, fully automatic sub-machine gun."
+ITEM.description = "Kompaktowy, w pełni automatyczny pistolet maszynowy."
 ITEM.model = "models/weapons/w_smg1.mdl"
 ITEM.class = "weapon_smg1"
 ITEM.weaponCategory = "primary"

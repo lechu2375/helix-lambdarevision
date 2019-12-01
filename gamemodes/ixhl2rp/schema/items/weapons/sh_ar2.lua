@@ -1,5 +1,5 @@
-ITEM.name = "Pulse-Rifle"
-ITEM.description = "A dark energy powered assault rifle."
+ITEM.name = "Karabin pulsacyjny"
+ITEM.description = "Karabin szturmowy zasilany ciemną energią."
 ITEM.model = "models/weapons/w_irifle.mdl"
 ITEM.class = "weapon_ar2"
 ITEM.weaponCategory = "primary"

@@ -1,5 +1,5 @@
-ITEM.name = "Permit Base"
+ITEM.name = "Podstawa zezwolenia"
 ITEM.model = "models/props_lab/clipboard.mdl"
-ITEM.description = "A permit for purchasing goods."
+ITEM.description = "Zezwolenie na zakup towarów."
 ITEM.category = "Permits"
 ITEM.permit = "none"

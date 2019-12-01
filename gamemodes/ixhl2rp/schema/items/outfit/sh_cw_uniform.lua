@@ -1,6 +1,6 @@
 
 ITEM.name = "Uniform członka CWU"
-ITEM.description = "Uniform noszony przez członków CWY"
+ITEM.description = "Uniform noszony przez członków CWU"
 ITEM.category = "Clothing"
 
 

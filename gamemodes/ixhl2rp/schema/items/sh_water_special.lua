@@ -1,5 +1,5 @@
 
-ITEM.name = "Puszka specjalnej wody."
+ITEM.name = "Puszka specjalnej wody"
 ITEM.model = Model("models/props_cunk/popcan01a.mdl")
 ITEM.skin = 2
 ITEM.description = "Różowa aluminiowa puszka wody, która wydaje się nieco lepsza niż zwykla."

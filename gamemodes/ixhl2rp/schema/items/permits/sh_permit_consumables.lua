@@ -1,3 +1,3 @@
-ITEM.name = "Consumables Permit"
-ITEM.description = "A permit allowing you to sell consumable goods."
+ITEM.name = "Zezwolenie na materiały spożywcze"
+ITEM.description = "Zezwolenie pozwalające na sprzedaż towarów konsumpcyjnych."
 ITEM.permit = "consumables"
