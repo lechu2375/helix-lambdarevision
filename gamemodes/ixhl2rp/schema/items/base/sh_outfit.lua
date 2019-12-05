@@ -249,9 +249,12 @@ function ITEM:OnRemoved()
 end
 
 function ITEM:OnEquipped()
+	local ply = self.player
+	ply:EmitSound("helix/inventory/cloth-inventory.wav")
 end
 
 function ITEM:OnUnequipped()
+	self:OnEquipped()
 end
 
 function ITEM:CanEquipOutfit()
