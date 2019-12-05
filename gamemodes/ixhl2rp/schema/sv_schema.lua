@@ -231,16 +231,3 @@ function Schema:SearchPlayer(client, target)
 
 	return true
 end
-
-
---Nowa tabelka w sqlu dla LP
-function ix.db.LoadTables()
-	local query 
-	query = mysql:Create("hl2_lp")
-		query:Create("commit_id", "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT")
-		query:Create("character_id", "INT(11) UNSIGNED NOT NULL")
-		query:Create("lp_amount", "INT(11) UNSIGNED NOT NULL")
-		query:Create("lp_description", "VARCHAR(150) DEFAULT NULL")
-		query:PrimaryKey("commit_id")
-	query:Execute()
-end
