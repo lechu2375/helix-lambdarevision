@@ -1,0 +1,15 @@
+util.AddNetworkString("requestLP")
+
+function sendLP(client,toGet)
+    local query = mysql:Select("hl2_lp")
+		query:Select("character_id")
+		query:Select("lp_amount")
+		query:Select("lp_description")
+		query:WhereIn("character_id", toGet)
+		query:Callback(function(result)
+            net.Start("requestLP")
+            net.WriteTable(result)
+            net.Send(client)
+	    end)
+	query:Execute()
+end
