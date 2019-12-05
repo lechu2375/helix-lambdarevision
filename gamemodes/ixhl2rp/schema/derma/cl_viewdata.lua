@@ -36,6 +36,26 @@ function PANEL:Init()
 	self.lastEditLabel:SizeToContents()
 	self.lastEditLabel:Dock(TOP)
 
+	self.lpButton = vgui.Create("DButton", self)
+	self.lpButton:SetFont("BudgetLabel")
+	self.lpButton:SetText("LP")
+	self.lpButton:SizeToContents()
+	self.lpButton:Dock(TOP)
+	function self.lpButton:DoClick()
+		--if self:GetParent().lpWindow then 
+		local lpWindow = self:GetParent():Add("DFrame")
+		lpWindow:MakePopup()
+		lpWindow:SetSize(ScrW() / 4 > 200 and ScrW() / 4 or ScrW() / 2, ScrH() / 2 > 300 and ScrH() / 2 or ScrH())
+		lpWindow:SetDraggable(true)
+
+		addLP = vgui.Create("DButton", lpWindow)
+		addLP:SetFont("BudgetLabel")
+		addLP:SetText("Add LP")
+		addLP:SizeToContents()
+		addLP:SetHeight(48)
+		addLP:Dock(TOP)		
+	end
+
 	self.textEntry = vgui.Create("DTextEntry", self)
 	self.textEntry:SetMultiline(true)
 	self.textEntry:Dock(FILL)
@@ -121,5 +141,7 @@ function PANEL:Close()
 		end
 	})
 end
+
+
 
 vgui.Register("ixViewData", PANEL, "DFrame")
