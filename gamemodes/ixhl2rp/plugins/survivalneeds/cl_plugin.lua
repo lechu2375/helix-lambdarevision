@@ -13,7 +13,7 @@ ix.bar.Add(function()
 		end
 
 		return var, status
-	end, Color(200, 200, 40), nil, "hunger")
+	end, Color(106, 176, 76), nil, "hunger") 
 
 	ix.bar.Add(function()
 		local status = ""
@@ -30,7 +30,7 @@ ix.bar.Add(function()
 		end
 
 		return var, status
-	end, Color(0, 119, 101), nil, "thirst")
+	end, Color(30, 144, 255), nil, "thirst") 
 
 function PLUGIN:RenderScreenspaceEffects()
 	local ply = LocalPlayer()
