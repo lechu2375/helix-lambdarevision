@@ -54,7 +54,6 @@ function PANEL:Init()
 	self.lpButton:Dock(TOP)
 	function self.lpButton:DoClick()
 		--if self:GetParent().lpWindow then 
-		self:GetParent():SetSize(100, 100)
 		lpWindow = vgui.Create("DFrame", self:GetParent())
 		lpWindow:MakePopup()
 		lpWindow:SetSize(ScrW() / 4 > 200 and ScrW() / 4 or ScrW() / 2, ScrH() / 2 > 300 and ScrH() / 2 or ScrH())
