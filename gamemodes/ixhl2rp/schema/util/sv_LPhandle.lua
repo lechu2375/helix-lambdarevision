@@ -9,6 +9,9 @@ function sendLP(client,toGet)
 		query:Select("lp_description")
 		query:WhereIn("character_id", toGet)
 		query:Callback(function(result)
+			if not istable(result) then
+				result = {}
+			end
             net.Start("requestLP")
             net.WriteTable(result)
             net.Send(client)
