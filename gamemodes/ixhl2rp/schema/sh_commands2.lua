@@ -62,4 +62,17 @@ do
 	ix.command.Add("getLP", COMMAND)
 end
 
+do
+	local COMMAND = {}
+	COMMAND.arguments = ix.type.character
+
+
+	function COMMAND:OnRun(client, target)
+		local query = mysql:Delete("hl2_lp")
+			query:Where("character_id", target:GetID())
+			query:Execute()			
+	end
+
+	ix.command.Add("clearLP", COMMAND)
+end
 

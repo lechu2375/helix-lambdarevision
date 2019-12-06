@@ -1,4 +1,6 @@
 util.AddNetworkString("requestLP")
+util.AddNetworkString("commitLP")
+--util.AddNetworkString("deleteLP")
 
 function sendLP(client,toGet)
     local query = mysql:Select("hl2_lp")
@@ -7,7 +9,6 @@ function sendLP(client,toGet)
 		query:Select("lp_description")
 		query:WhereIn("character_id", toGet)
 		query:Callback(function(result)
-			print("send back lp request")
             net.Start("requestLP")
             net.WriteTable(result)
             net.Send(client)
@@ -24,7 +25,18 @@ function commitLP(charID,amount,desc)
 end
 
 net.Receive("requestLP", function(len,ply)
-	print("someone requests lp table")
+	if not ply:GetCharacter():IsCombine() then
+		--kara dla cwela
+	end
 	local toGet = net.ReadInt(10)
 	sendLP(ply,toGet)
+end)
+net.Receive("commitLP", function(len,ply)
+	if (ply.commitDelay or CurTime())>CurTime() then return end
+	if not ply:GetCharacter():IsCombine() then
+		--kara dla cwela
+	end
+	ply.commitDelay = CurTime()+5
+	local info = net.ReadTable()
+	commitLP(info["character_id"],info["lp_amount"],info["lp_description"])
 end)
