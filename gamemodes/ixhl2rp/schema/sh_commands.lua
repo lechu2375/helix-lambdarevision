@@ -158,7 +158,7 @@ do
 		if (!hook.Run("CanPlayerViewData", client, targetClient)) then
 			return "@cantViewData"
 		end
-
+		
 		netstream.Start(client, "ViewData", targetClient, target:GetData("cid") or false, target:GetData("combineData"))
 	end
 

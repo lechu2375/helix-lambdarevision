@@ -62,9 +62,4 @@ do
 	ix.command.Add("getLP", COMMAND)
 end
 
-if CLIENT then 
-	net.Receive("requestLP", function()
-		local table = net.ReadTable()
-		PrintTable(table)
-	end)
-end
+

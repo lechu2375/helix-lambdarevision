@@ -15,6 +15,17 @@ local PANEL = {}
 
 AccessorFunc(PANEL, "bCommitOnClose", "CommitOnClose", FORCE_BOOL)
 
+function getLP(id)
+	net.Start("requestLP")
+	net.WriteInt(id,10)
+	net.SendToServer()
+	print("Requesting lp for character:"..id)
+end
+
+
+
+
+
 function PANEL:Init()
 	self:SetCommitOnClose(true)
 	self:SetBackgroundBlur(true)
@@ -43,17 +54,28 @@ function PANEL:Init()
 	self.lpButton:Dock(TOP)
 	function self.lpButton:DoClick()
 		--if self:GetParent().lpWindow then 
-		local lpWindow = self:GetParent():Add("DFrame")
+		self:GetParent():SetSize(100, 100)
+		lpWindow = vgui.Create("DFrame", self:GetParent())
 		lpWindow:MakePopup()
 		lpWindow:SetSize(ScrW() / 4 > 200 and ScrW() / 4 or ScrW() / 2, ScrH() / 2 > 300 and ScrH() / 2 or ScrH())
 		lpWindow:SetDraggable(true)
-
+		getLP( self:GetParent().target:GetCharacter():GetID())
+		function lpWindow:Populate()
+			for k,v in pairs(lpCache) do 
+				lpWindow.info[k] = vgui.Create("DLabel", lpWindow)
+				print("lecikv")
+				lpWindow.info[k]:SetText("Numer postaci:"..v["character_id"].."\n Ilość punktów:"..v["lp_amount"])
+				lpWindow.info[k]:SizeToContents()
+				lpWindow.info[k]:Dock(TOP)
+			end
+		end		
 		addLP = vgui.Create("DButton", lpWindow)
 		addLP:SetFont("BudgetLabel")
 		addLP:SetText("Add LP")
 		addLP:SizeToContents()
 		addLP:SetHeight(48)
 		addLP:Dock(TOP)		
+		ix.gui.viewdata = self
 	end
 
 	self.textEntry = vgui.Create("DTextEntry", self)
@@ -61,6 +83,8 @@ function PANEL:Init()
 	self.textEntry:Dock(FILL)
 	self.textEntry:SetFont("ixCombineViewData")
 end
+
+
 
 function PANEL:Populate(target, cid, data, bDontShow)
 	data = data or {}
@@ -143,5 +167,10 @@ function PANEL:Close()
 end
 
 
-
+net.Receive("requestLP", function(len)
+	local tabler = net.ReadTable()
+	lpCache = tabler or {}
+	print("Loaded lpCache")
+	ix.gui.viewdata.lpWindow:Populate()
+end)
 vgui.Register("ixViewData", PANEL, "DFrame")
