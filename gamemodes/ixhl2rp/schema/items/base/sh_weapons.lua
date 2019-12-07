@@ -95,7 +95,12 @@ ITEM.functions.Equip = {
 	tip = "equipTip",
 	icon = "icon16/tick.png",
 	OnRun = function(item)
-		item:Equip(item.player)
+		local ply = item.player
+		timer.Simple(1.5, function()
+			if IsValid(ply) then
+				item:Equip(ply)
+			end
+		end)
 		return false
 	end,
 	OnCanRun = function(item)
