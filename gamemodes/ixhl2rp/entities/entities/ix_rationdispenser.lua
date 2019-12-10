@@ -67,7 +67,21 @@ if (SERVER) then
 
 	function ENT:SpawnRation(callback, releaseDelay)
 		releaseDelay = releaseDelay or 1.2
-
+		local lp = 0
+		local query = mysql:Select("hl2_lp")
+		query:Select("character_id")
+		query:Select("lp_amount")
+		query:WhereIn("character_id", toGet)
+		query:Callback(function(result)
+			if not istable(result) then
+				result = {}
+			end
+			for _,v in pairs(result) do
+				lp = lp + v["lp_amount"]
+			end
+	    end)
+		print(lp)
+		query:Execute()
 		local item = ix.item.Spawn("ration", self:GetPos(), function(itemTable, entity)
 			if (callback) then
 				callback(entity)
