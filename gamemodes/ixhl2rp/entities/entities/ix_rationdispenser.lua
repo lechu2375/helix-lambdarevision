@@ -20,6 +20,12 @@ ENT.Displays = {
 	[8] = {"PREPARING", Color(0, 255, 0)}
 }
 
+ENT.Rations = {
+	[1]="ration",
+	[2]="ration_loyalist",
+	[3]="ration_priority"
+}
+
 function ENT:SetupDataTables()
 	self:NetworkVar("Int", 0, "Display")
 	self:NetworkVar("Bool", 1, "Enabled")
@@ -65,24 +71,35 @@ if (SERVER) then
 		self.nextUseTime = CurTime()
 	end
 
-	function ENT:SpawnRation(callback, releaseDelay)
+	function ENT:SpawnRation(callback, releaseDelay,charid)
 		releaseDelay = releaseDelay or 1.2
 		local lp = 0
 		local query = mysql:Select("hl2_lp")
 		query:Select("character_id")
 		query:Select("lp_amount")
-		query:WhereIn("character_id", toGet)
+		query:WhereIn("character_id", charid)
 		query:Callback(function(result)
-			if not istable(result) then
-				result = {}
-			end
-			for _,v in pairs(result) do
-				lp = lp + v["lp_amount"]
+			
+			if istable(result) then
+				
+				PrintTable(result)
+				for _,v in pairs(result) do
+					lp = lp + v["lp_amount"]
+				end
 			end
 	    end)
-		print(lp)
 		query:Execute()
-		local item = ix.item.Spawn("ration", self:GetPos(), function(itemTable, entity)
+		local itemstr
+		print("ilosc lp wynosci"..lp)
+		if lp>=15 then
+			itemstr=self.Rations[2]
+		elseif lp>=45 then
+			itemstr=self.Rations[3]
+		else
+			itemstr=self.Rations[1]
+		end
+
+		local item = ix.item.Spawn(itemstr, self:GetPos(), function(itemTable, entity)
 			if (callback) then
 				callback(entity)
 			end
@@ -116,12 +133,12 @@ if (SERVER) then
 		end, self:GetAngles())
 	end
 
-	function ENT:StartDispense()
+	function ENT:StartDispense(ID)
 		self:SetDisplay(3)
 		self:SpawnRation(function()
 			self.dispenser:Fire("SetAnimation", "dispense_package")
 			self:EmitSound("ambient/machines/combine_terminal_idle4.wav")
-		end)
+		end,1.2,ID)
 	end
 
 	function ENT:DisplayError(id, length)
@@ -150,7 +167,7 @@ if (SERVER) then
 			end
 
 			local cid = client:GetCharacter():GetInventory():HasItem("cid")
-
+			local charid = client:GetCharacter():GetID()
 			if (!cid) then
 				self:DisplayError(7)
 				return
@@ -168,7 +185,7 @@ if (SERVER) then
 					self:EmitSound("ambient/machines/combine_terminal_idle3.wav")
 
 					timer.Simple(10.2, function()
-						self:StartDispense()
+						self:StartDispense(charid)
 						cid:SetData("nextRationTime", os.time() + ix.config.Get("rationInterval", 1))
 					end)
 				else
