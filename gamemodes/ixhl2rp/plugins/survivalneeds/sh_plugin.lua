@@ -112,7 +112,7 @@ local hunger_items = {
 
 	["normal_beer"] = {
 		["name"] = "Bottle of Standard Lager",
-		["model"] = "models/props_junk/garbage_glassbottle003a.mdl",
+		["model"] = "models/bioshockinfinite/hext_bottle_lager.mdl",
 		["desc"] = "Butelka piwa, produkowana przez Unię, na etykiecie widnieje 7,3% zawartości alkoholu.",
 		["hunger"] = -5,
 		["thirst"] = 10,
@@ -158,7 +158,7 @@ local hunger_items = {
 	},
 	["standard_supplement"] = {
 		["name"] = "Suplementy",
-		["model"] = "models/props_lab/jar01b.mdl",
+		["model"] = "models/foodnhouseholdaaaaa/combirationb.mdl",
 		["desc"] = "Biały plastikowy słoik, zawierający porcję codziennych składników odżywczych.",
 		["hunger"] = 25,
 		["thirst"] = 0
@@ -175,6 +175,45 @@ local hunger_items = {
 		["hunger"] = 12,
 		["model"] = "models/bioshockinfinite/hext_orange.mdl"
 	}
+	["apple"] = {
+		["name"] = "Jabłko",
+		["desc"] = "Jabłko, skórka mieni się pod światłem.",
+		["hunger"] = 5,
+		["model"] = "models/bioshockinfinite/hext_apple.mdl"
+	},
+	["banan"] = {
+		["name"] = "Banan",
+		["desc"] = "Żołty owoc.",
+		["hunger"] = 5,
+		["model"] = "models/bioshockinfinite/hext_banana.mdl"
+	},	
+	["chockolade"] = {
+		["name"] = "Tabliczka Czekolady",
+		["desc"] = "Tabliczka czekolady załadowana w papierek opatrzony logiem UU.",
+		["hunger"] = 10,
+		["model"] = "models/bioshockinfinite/hext_candy_chocolate.mdl"
+	},
+	["pear"] = {
+		["name"] = "Gruszka",
+		["desc"] = "Tabliczka czekolady załadowana w papierek opatrzony logiem UU.",
+		["hunger"] = 5,
+		["model"] = "models/bioshockinfinite/hext_pear.mdl"
+	},
+	["ananas"] = {
+		["name"] = "Ananas",
+		["desc"] = "Tabliczka czekolady załadowana w papierek opatrzony logiem UU.",
+		["hunger"] = 15,
+		["thirst"] = 10,
+		["model"] = "models/bioshockinfinite/hext_pineapple.mdl"
+	},	
+	["potato"] = {
+		["name"] = "Ziemniak",
+		["desc"] = "Surowy ziemniak.",
+		["hunger"] = -5,
+		["thirst"] = 5,
+		["model"] = "models/bioshockinfinite/hext_potato.mdl"
+	}	
+	
 }
 
 for k, v in pairs(hunger_items) do
