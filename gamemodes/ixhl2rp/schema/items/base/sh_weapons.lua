@@ -99,6 +99,7 @@ ITEM.functions.Equip = {
 		timer.Simple(1.5, function()
 			if IsValid(ply) then
 				item:Equip(ply)
+				ix.chat.Send(ply,"me","wyciąga "..item.name)
 			end
 		end)
 		return false
