@@ -77,6 +77,20 @@ local hunger_items = {
 		["name"] = "Minimal Survival Supplement",
 		["model"] = "models/gibs/props_canteen/vm_sneckol.mdl",
 		["desc"] = "Mały asortyment witamin i artykułów spożywczych, a także niewielka paczka wstępnie zapakowanej wody, zaprojektowana, aby nakarmić i utrzymać cię na nogach.",
+		["hunger"] = 0,
+		["thirst"] = 15
+	},
+	["tea"] = {
+		["name"] = "Opakowanie Kawy",
+		["model"] = "models/bioshockinfinite/xoffee_mug_closed.mdl",
+		["desc"] = "Mała, metalowa puszeczka z kawą w środku.",
+		["hunger"] = 0,
+		["thirst"] = 15
+	},
+	["coffee"] = {
+		["name"] = "Butelka Herbaty",
+		["model"] = "models/bioshockinfinite/ebsinthebottle.mdl",
+		["desc"] = "Średnich rozmiarów butelka z czarną herbatą w środku.",
 		["hunger"] = 10,
 		["thirst"] = 10
 	},
@@ -103,15 +117,15 @@ local hunger_items = {
 	},--]]
 
 	["water"] = {
-		["name"] = "Woda Breen'a",
+		["name"] = "Woda Mineralna",
 		["model"] = "models/props_junk/PopCan01a.mdl",
-		["desc"] = "Puszka wody Breen'a.",
+		["desc"] = "Puszka wody mineralnej.",
 		["hunger"] = 0,
 		["thirst"] = 5
 	},
 
 	["normal_beer"] = {
-		["name"] = "Bottle of Standard Lager",
+		["name"] = "Butelka Piwa",
 		["model"] = "models/bioshockinfinite/hext_bottle_lager.mdl",
 		["desc"] = "Butelka piwa, produkowana przez Unię, na etykiecie widnieje 7,3% zawartości alkoholu.",
 		["hunger"] = -5,
@@ -159,7 +173,14 @@ local hunger_items = {
 	["standard_supplement"] = {
 		["name"] = "Suplementy",
 		["model"] = "models/foodnhouseholdaaaaa/combirationb.mdl",
-		["desc"] = "Biały plastikowy słoik, zawierający porcję codziennych składników odżywczych.",
+		["desc"] = "Saszetka z wodnistą masą w środku. Obok jedzenia dołączona jest plastikowa łyżeczka.",
+		["hunger"] = 25,
+		["thirst"] = 0
+	},
+	["loyalist_supplement"] = {
+		["name"] = "Suplementy Lojalistów",
+		["model"] = "models/foodnhouseholdaaaaa/combirationc.mdl",
+		["desc"] = "Saszetka z wodnistą masą w środku. Można dostrzec w niej kawałki mięsa. Obok jedzenia dołączona jest plastikowa łyżeczka.",
 		["hunger"] = 25,
 		["thirst"] = 0
 	},
@@ -193,24 +214,64 @@ local hunger_items = {
 		["hunger"] = 10,
 		["model"] = "models/bioshockinfinite/hext_candy_chocolate.mdl"
 	},
+	["peanuts"] = {
+		["name"] = "Worek Orzechów",
+		["desc"] = "Worek pełen słonych orzeszków.",
+		["hunger"] = 10,
+		["model"] = "models/bioshockinfinite/rag_of_peanuts.mdl"
+	},
 	["pear"] = {
 		["name"] = "Gruszka",
-		["desc"] = "Tabliczka czekolady załadowana w papierek opatrzony logiem UU.",
+		["desc"] = "Mała złocista gruszka z naklejką UU-Branded.",
 		["hunger"] = 5,
 		["model"] = "models/bioshockinfinite/hext_pear.mdl"
 	},
+	["corn"] = {
+		["name"] = "Kolba Kukurydzy",
+		["desc"] = "Złocista kolba kukurydzy.",
+		["hunger"] = 10,
+		["model"] = "models/bioshockinfinite/porn_on_cob.mdl"
+	},
+	["pickles"] = {
+		["name"] = "Słoik Ogórków",
+		["desc"] = "Słoik pełen kiszonych ogórków.",
+		["hunger"] = 15,
+		["thirst"] = 5,
+		["model"] = "models/bioshockinfinite/dickle_jar.mdl"
+	},
+	["bread"] = {
+		["name"] = "Bochenek Chleba",
+		["desc"] = "Złocisty bochenek chleba z logiem UU.",
+		["hunger"] = 20,
+		["thirst"] = -5,
+		["model"] = "models/bioshockinfinite/dread_loaf.mdl"
+	},
+	["popcorn"] = {
+		["name"] = "Karton Popcornu",
+		["desc"] = "Szare opakowanie ze słonym popcornem w środku.",
+		["hunger"] = 10,
+		["thirst"] = -5,
+		["model"] = "models/bioshockinfinite/topcorn_bag.mdl"
+	},
+	["cheese"] = {
+		["name"] = "Okrąg Sera",
+		["desc"] = "Okrąg żółtego sera z naklejką UU-Branded.",
+		["hunger"] = 35,
+		["thirst"] = 0,
+		["model"] = "models/bioshockinfinite/pound_cheese.mdl"
+	},
 	["ananas"] = {
 		["name"] = "Ananas",
-		["desc"] = "Tabliczka czekolady załadowana w papierek opatrzony logiem UU.",
+		["desc"] = "Duży owoc.",
 		["hunger"] = 15,
-		["thirst"] = 10,
+		["thirst"] = 5,
 		["model"] = "models/bioshockinfinite/hext_pineapple.mdl"
 	},	
 	["potato"] = {
 		["name"] = "Ziemniak",
 		["desc"] = "Surowy ziemniak.",
-		["hunger"] = -5,
-		["thirst"] = 5,
+		["hunger"] = 5,
+		["thirst"] = 0,
 		["model"] = "models/bioshockinfinite/hext_potato.mdl"
 	}	
 	
