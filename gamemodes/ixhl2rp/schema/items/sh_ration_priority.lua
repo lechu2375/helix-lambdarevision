@@ -1,6 +1,6 @@
 
 ITEM.name = "Racja Priorytetowa"
-ITEM.model = Model("models/weapons/w_package.mdl")
+ITEM.model = Model("models/weapons/w_packatp.mdl")
 ITEM.description = "Opakowanie termokurczliwe zawierające jedzenie i pieniądze."
 ITEM.items = {"supplements", "water"}
 
