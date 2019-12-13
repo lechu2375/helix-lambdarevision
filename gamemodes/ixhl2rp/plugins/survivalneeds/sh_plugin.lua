@@ -130,7 +130,7 @@ local hunger_items = {
 		["desc"] = "Butelka piwa, produkowana przez Unię, na etykiecie widnieje 7,3% zawartości alkoholu.",
 		["hunger"] = -5,
 		["thirst"] = 10,
-		["empty"] = "empty_bottle",
+		["empty"] = "empty_bottle"
 	},
 
 	["big_beer"] = {
@@ -195,7 +195,7 @@ local hunger_items = {
 		["desc"] = "Zwykła, lekko twarda pomarańcza.",
 		["hunger"] = 12,
 		["model"] = "models/bioshockinfinite/hext_orange.mdl"
-	}
+	},
 	["apple"] = {
 		["name"] = "Jabłko",
 		["desc"] = "Jabłko, skórka mieni się pod światłem.",
