@@ -29,7 +29,7 @@ ix.command.Add("sprobuj", {
 	end
 })
 end
-
+--[[
 do
 	local COMMAND = {}
 	COMMAND.arguments = {
@@ -47,8 +47,8 @@ do
 	end
 
 	ix.command.Add("addLP", COMMAND)
-end
-
+end]]--
+--[[
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.character
@@ -60,8 +60,8 @@ do
 	end
 
 	ix.command.Add("getLP", COMMAND)
-end
-
+end]]
+--[[
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.character
@@ -74,5 +74,5 @@ do
 	end
 
 	ix.command.Add("clearLP", COMMAND)
-end
+end]]--
 

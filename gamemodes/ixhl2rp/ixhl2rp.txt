@@ -2,6 +2,6 @@
 {
 	"base"		"helix"
 	"title"		"HL2 RP"
-	"author"	"lechu2375"
+	"author"	"nebulous.cloud"
 	"menusystem" "1"
 }
