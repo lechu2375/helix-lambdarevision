@@ -28,7 +28,35 @@ ix.command.Add("sprobuj", {
 
 	end
 })
+
+
+ix.chat.Register("apply", {
+	OnChatAdd = function(self, speaker, text)
+		chat.AddText(Color(140, 122, 230), "((Identyfikacja))"..text)
+	end,	
+ 	CanHear = ix.config.Get("chatRange", 280),
+	indicator = "Identyfikuje się",
+	deadCanChat = false
+})
+
+ix.command.Add("apply", {
+	description = "Wyidentyfikuj się",
+	OnRun = function(self, client, text)
+		local inv = client:GetCharacter():GetInventory()
+		local cid = inv:GetItemsByUniqueID("cid")
+		
+		local str
+		if cid[1] then
+			str=" CID:"..cid[1]:GetData("id", "00000").." Personalia:"..cid[1]:GetData("name", "Nieprzypisany")
+		else
+			str="Brak CID"
+		end
+		ix.chat.Send(client, "apply", str)
+	end
+})
+
 end
+
 --[[
 do
 	local COMMAND = {}
