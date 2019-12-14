@@ -306,7 +306,8 @@ do
 		default = "John Doe",
 		index = 1,
 		OnValidate = function(self, value, payload, client)
-			value = string.Trim((tostring(value):gsub("\r\n", ""):gsub("\n", "")))
+			value = tostring(value):gsub("\r\n", ""):gsub("\n", "")
+			value = string.Trim(value)
 
 			local minLength = ix.config.Get("minNameLength", 4)
 			local maxLength = ix.config.Get("maxNameLength", 32)
@@ -365,7 +366,8 @@ do
 					return true
 				end
 			end
-		end
+		end,
+		alias = "Desc"
 	})
 
 	ix.char.RegisterVar("model", {
