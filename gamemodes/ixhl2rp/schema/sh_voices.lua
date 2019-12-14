@@ -585,7 +585,7 @@ Schema.voices.Add("Combine", "SECTOR CONTROL", "Stabilization team has sector co
 Schema.voices.Add("Combine", "SECTOR OVERRUN", "Overwatch sector overrun, repeat sector overrun.", "npc/combine_soldier/vo/overwatchsectoroverrun.wav")
 Schema.voices.Add("Combine", "AT LOCATION REPORT", "Protection Team is at location, reporting.", "npc/metropolice/vo/ptatlocationreport.wav")
 Schema.voices.Add("Combine", "HOLD POSITION", "Protection team, hold this position.", "npc/metropolice/vo/holdthisposition.wav")
-Schema.voices.Add("Combine", "NECROTICS2", "Necrotics.", "npc/metropolice/vo/necrotics.wav")  thing
+Schema.voices.Add("Combine", "NECROTICS2", "Necrotics.", "npc/metropolice/vo/necrotics.wav")  
 Schema.voices.Add("Combine", "PT GO AGAIN", "PT go again.", "npc/metropolice/vo/ptgoagain.wav")
 Schema.voices.Add("Combine", "REPORT STATUS", "Local CP teams report status.", "npc/metropolice/vo/localcptreportstatus.wav")
 Schema.voices.Add("Combine", "TEAM ADVANCE", "Team in position, advance.", "npc/metropolice/vo/teaminpositionadvance.wav") 
@@ -734,7 +734,7 @@ Schema.voices.Add("Civil Protection", "PAIN3", "Augh!", "npc/metropolice/pain3.w
 Schema.voices.Add("Civil Protection", "PAIN4", "Agh!", "npc/metropolice/pain4.wav")
 Schema.voices.Add("Combine", "EXPIRED", "Expired.", "npc/metropolice/vo/expired.wav")
 Schema.voices.Add("Combine", "LINE", "Line.", "npc/metropolice/vo/line.wav")
-Schema.voices.Add("Combine", "NINER", "Niner.", "npc/combine_soldier/vo/niner.wav")  thing
+Schema.voices.Add("Combine", "NINER", "Niner.", "npc/combine_soldier/vo/niner.wav")  
 Schema.voices.Add("Combine", "DEFENDER", "Defender.", "npc/metropolice/vo/defender.wav")
 Schema.voices.Add("Combine", "HERO", "Hero.", "npc/metropolice/vo/hero.wav")
 Schema.voices.Add("Combine", "TAP", "Tap.", "npc/metropolice/vo/tap.wav")
