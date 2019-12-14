@@ -233,7 +233,7 @@ function Schema:SearchPlayer(client, target)
 end
 
 
---Nowa tabelka w sqlu dla LP
+--New table for LP
 function ix.db.LoadTables()
 	local query 
 	query = mysql:Create("hl2_lp")
