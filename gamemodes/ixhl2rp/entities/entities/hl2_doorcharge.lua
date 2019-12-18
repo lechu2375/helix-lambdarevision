@@ -140,7 +140,6 @@ else
 				--self.beeps = 0
 			end
 			if self.nextbeep<CurTime() then --and self.beeps<=2
-				print("beepnext"..self.beeptime)
 				self:EmitSound("hl1/fvox/beep.wav")
 				self.nextbeep = CurTime()+ self.beeptime
 				--self.beeps = self.beeps +1
