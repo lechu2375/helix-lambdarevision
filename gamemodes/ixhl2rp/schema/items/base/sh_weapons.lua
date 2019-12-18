@@ -66,7 +66,7 @@ ITEM:Hook("drop", function(item)
 			owner:StripWeapon(item.class)
 			owner.carryWeapons[item.weaponCategory] = nil
 			owner:EmitSound("items/ammo_pickup.wav", 80)
-			ix.chat.Send(client,"me","wyrzuca "..self.name)
+			ix.chat.Send(owner,"me","wyrzuca "..item.name)
 		end
 
 		item:RemovePAC(owner)
