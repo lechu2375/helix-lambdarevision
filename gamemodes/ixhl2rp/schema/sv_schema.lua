@@ -43,6 +43,23 @@ function Schema:SaveVendingMachines()
 	ix.data.Set("vendingMachines", data)
 end
 
+function Schema:SaveUnionLocks()
+	local data = {}
+
+	for _, v in ipairs(ents.FindByClass("hl2_unionlock")) do
+		if (IsValid(v.door)) then
+			data[#data + 1] = {
+				v.door:MapCreationID(),
+				v.door:WorldToLocal(v:GetPos()),
+				v.door:WorldToLocalAngles(v:GetAngles()),
+				v:GetLocked()
+			}
+		end
+	end
+	ix.data.Set("unionLocks", data)
+
+end
+
 function Schema:SaveCombineLocks()
 	local data = {}
 
@@ -56,7 +73,6 @@ function Schema:SaveCombineLocks()
 			}
 		end
 	end
-
 	ix.data.Set("combineLocks", data)
 end
 
@@ -99,6 +115,21 @@ function Schema:LoadCombineLocks()
 
 		if (IsValid(door) and door:IsDoor()) then
 			local lock = ents.Create("ix_combinelock")
+
+			lock:SetPos(door:GetPos())
+			lock:Spawn()
+			lock:SetDoor(door, door:LocalToWorld(v[2]), door:LocalToWorldAngles(v[3]))
+			lock:SetLocked(v[4])
+		end
+	end
+end
+
+function Schema:LoadUnionLocks()
+	for _, v in ipairs(ix.data.Get("unionLocks") or {}) do
+		local door = ents.GetMapCreatedEntity(v[1])
+
+		if (IsValid(door) and door:IsDoor()) then
+			local lock = ents.Create("hl2_unionlock")
 
 			lock:SetPos(door:GetPos())
 			lock:Spawn()
