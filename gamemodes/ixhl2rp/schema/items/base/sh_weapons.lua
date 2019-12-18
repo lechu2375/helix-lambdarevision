@@ -66,6 +66,7 @@ ITEM:Hook("drop", function(item)
 			owner:StripWeapon(item.class)
 			owner.carryWeapons[item.weaponCategory] = nil
 			owner:EmitSound("items/ammo_pickup.wav", 80)
+			ix.chat.Send(client,"me","wyrzuca "..self.name)
 		end
 
 		item:RemovePAC(owner)
@@ -79,6 +80,7 @@ ITEM.functions.EquipUn = { -- sorry, for name order.
 	icon = "icon16/cross.png",
 	OnRun = function(item)
 		item:Unequip(item.player, true)
+
 		return false
 	end,
 	OnCanRun = function(item)
@@ -96,17 +98,18 @@ ITEM.functions.Equip = {
 	icon = "icon16/tick.png",
 	OnRun = function(item)
 		local ply = item.player
+		
+
 		timer.Simple(1.5, function()
-			if IsValid(ply) then
+			if item.functions.Equip.OnCanRun(item,ply) then
 				item:Equip(ply)
-				ix.chat.Send(ply,"me","wyciąga "..item.name)
+				
 			end
 		end)
 		return false
 	end,
-	OnCanRun = function(item)
-		local client = item.player
-
+	OnCanRun = function(item,ply)
+		local client = item.player or ply
 		return !IsValid(item.entity) and IsValid(client) and item:GetData("equip") != true and
 			hook.Run("CanPlayerEquipItem", client, item) != false and item.invID == client:GetCharacter():GetInventory():GetID()
 	end
@@ -152,7 +155,7 @@ function ITEM:Equip(client)
 	end
 
 	local weapon = client:Give(self.class, !self.isGrenade)
-
+	ix.chat.Send(client,"me","wyciąga "..self.name)
 	if (IsValid(weapon)) then
 		local ammoType = weapon:GetPrimaryAmmoType()
 
@@ -219,7 +222,7 @@ function ITEM:Unequip(client, bPlaySound, bRemoveItem)
 	if (self.OnUnequipWeapon) then
 		self:OnUnequipWeapon(client, weapon)
 	end
-
+	ix.chat.Send(client,"me","chowa "..self.name)
 	if (bRemoveItem) then
 		self:Remove()
 	end
