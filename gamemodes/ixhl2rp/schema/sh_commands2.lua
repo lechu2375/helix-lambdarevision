@@ -55,6 +55,25 @@ ix.command.Add("apply", {
 	end
 })
 
+ix.command.Add("doorkick", {
+	description = "Wypierdol drzwi",
+	OnRun = function(self, client)
+		if client:Team()==FACTION_MPF or client:Team()==FACTION_OTA  then
+			local trace = client:GetEyeTraceNoCursor()
+			if trace.Entity:GetClass() =="prop_door_rotating" then
+				client:ForceSequence("kickdoorbaton")
+				timer.Simple(1, function()
+					trace.Entity:EmitSound("physics/wood/wood_panel_impact_hard1.wav",90)
+					trace.Entity:Fire("Unlock")
+					trace.Entity:Fire("Open")
+				end)
+			else
+				client:Notify("Nie ma czego wyważyć.")
+			end
+		end
+	end
+})
+
 end
 
 --[[
