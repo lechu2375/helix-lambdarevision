@@ -183,6 +183,8 @@ do
 	ix.chat.Register("broadcast", CLASS)
 end
 
+ix.chat.classes["me"].GetColor = function() return Color(198,162,238) end
+ix.chat.classes["me"].Color = Color(198,162,238)
 
 
 ix.anim.SetModelClass("models/ninja/combine_soldier_reimagine.mdl", "overwatch")
