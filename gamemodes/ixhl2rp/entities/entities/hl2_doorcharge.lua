@@ -99,8 +99,14 @@ if (SERVER) then
 				explo:SetPos( ent:GetPos() )
 				explo:Spawn()
 				explo:Fire( "Explode" )
-				explo:SetKeyValue( "IMagnitude", 20 )			
+				explo:SetKeyValue( "IMagnitude", 38 )			
 				ent.door:Fire("Unlock")
+				
+				local angles = ent.door:AlignAngles(ent.door:GetAngles(),self:GetAngles())
+				
+				local force = angles:Up()
+				force = ((force * 250)*-1)								
+				ent.door:BlastDoor(force,30,false)
 				ent:Remove()
 			end)
 			self.nextbeep = CurTime()+1
@@ -109,7 +115,6 @@ if (SERVER) then
 			
 		end
 	end
-
 	function ENT:Use(client)
 		self:Toggle(client)
 	end
