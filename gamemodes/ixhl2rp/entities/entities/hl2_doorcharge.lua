@@ -41,7 +41,7 @@ if (SERVER) then
 
 		self.door = door
 		self.door:DeleteOnRemove(self)
-
+		door.charge = self
 
 		if (IsValid(doorPartner)) then
 			self.doorPartner = doorPartner
@@ -59,6 +59,10 @@ if (SERVER) then
 
 		if (!IsValid(door) or !door:IsDoor()) then
 			return client:NotifyLocalized("dNotValid")
+		end
+
+		if IsValid(door.charge) then
+			return client:Notify("Te drzwi posiadają już założony ładunek wybuchowy.")
 		end
 
 		local normal = client:GetEyeTrace().HitNormal:Angle()
@@ -105,7 +109,7 @@ if (SERVER) then
 				local angles = ent.door:AlignAngles(ent.door:GetAngles(),self:GetAngles())
 				
 				local force = angles:Up()
-				force = ((force * 250)*-1)								
+				force = (force * -250)								
 				ent.door:BlastDoor(force,30,false)
 				ent:Remove()
 			end)
