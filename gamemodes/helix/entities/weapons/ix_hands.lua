@@ -54,7 +54,9 @@ SWEP.allowedHoldableClasses = {
 	["prop_physics"] = true,
 	["prop_physics_override"] = true,
 	["prop_physics_multiplayer"] = true,
-	["prop_ragdoll"] = true
+	["prop_ragdoll"] = true,
+	["ix_container"] = true,
+	["ix_money"] = true
 }
 
 -- luacheck: globals ACT_VM_FISTS_DRAW ACT_VM_FISTS_HOLSTER
