@@ -284,7 +284,7 @@ for k, v in pairs(hunger_items) do
 	ITEM.model = v.model
 	ITEM.width = v.width or 1
 	ITEM.height = v.height or 1
-	ITEM.category = "Survival"
+	ITEM.category = "consumables"
 	ITEM.hunger = v.hunger or 0
 	ITEM.thirst = v.thirst or 0
 	ITEM.empty = v.empty or false
