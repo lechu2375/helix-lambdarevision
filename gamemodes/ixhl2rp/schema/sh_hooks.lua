@@ -4,6 +4,10 @@ function Schema:CanPlayerUseBusiness(client, uniqueID)
 		local itemTable = ix.item.list[uniqueID]
 
 		if (itemTable) then
+			if(itemTable.base == "base_permits") then
+				return false
+			end
+
 			if (itemTable.permit) then
 				local character = client:GetCharacter()
 				local inventory = character:GetInventory()

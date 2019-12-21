@@ -285,6 +285,7 @@ for k, v in pairs(hunger_items) do
 	ITEM.width = v.width or 1
 	ITEM.height = v.height or 1
 	ITEM.category = "consumables"
+	ITEM.permit = "consumables"
 	ITEM.hunger = v.hunger or 0
 	ITEM.thirst = v.thirst or 0
 	ITEM.empty = v.empty or false
@@ -292,7 +293,7 @@ for k, v in pairs(hunger_items) do
 		return self.description
 	end
 	ITEM.functions.Consume = {
-		name = "Consume",
+		name = "Skonsumuj",
 		OnCanRun = function(item)
 			if item.thirst != 0 then
 				if item.player:GetCharacter():GetData("thirst", 100) >= 100 then
