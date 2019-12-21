@@ -15,6 +15,8 @@ function Schema:CanPlayerUseBusiness(client, uniqueID)
 				return false
 			end
 		end
+	elseif( client:Team() == FACTION_MPF or client:Team() == FACTION_OTA ) then
+		return false
 	end
 end
 

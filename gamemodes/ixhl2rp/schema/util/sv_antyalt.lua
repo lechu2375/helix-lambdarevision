@@ -1,3 +1,4 @@
+ix.log.AddType("playerWarning", function(client, info) return (info) end, FLAG_DANGER)
 local query
 query = mysql:Create("IPinfotable")
 	query:Create("ipadress", "VARCHAR(64) NOT NULL")
@@ -49,7 +50,6 @@ function Schema:PlayerInitialSpawn( ply )
         playerIPcache[steamid][ip] = true
         write = true
     end
-    PrintTable(playerIPcache)
     if write then
         file.Write("userip/"..steamid..".txt",util.TableToJSON(playerIPcache[steamid]))
     end
