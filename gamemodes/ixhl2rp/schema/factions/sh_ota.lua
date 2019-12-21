@@ -14,8 +14,8 @@ function FACTION:OnCharacterCreated(client, character)
 	inventory:Add("pistol", 1)
 	inventory:Add("pistolammo", 2)
 
-	inventory:Add("ar2", 1)
-	inventory:Add("ar2ammo", 2)
+	inventory:Add("smg1", 1)
+	inventory:Add("smg1ammo", 3)
 end
 
 function FACTION:GetDefaultName(client)
