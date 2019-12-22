@@ -14,5 +14,4 @@ function PLUGIN:ScalePlayerDamage(ply,hitgroup,dmginfo )
             end
         end
     end
-
 end

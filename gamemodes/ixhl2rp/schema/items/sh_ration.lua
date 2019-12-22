@@ -2,7 +2,7 @@
 ITEM.name = "Racje"
 ITEM.model = Model("models/weapons/w_packatc.mdl")
 ITEM.description = "Opakowanie termokurczliwe zawierające jedzenie i pieniądze."
-ITEM.items = {"supplements", "water"}
+ITEM.items = {"supplements", "water","standard_supplement"}
 
 ITEM.functions.Open = {
 	OnRun = function(itemTable)
