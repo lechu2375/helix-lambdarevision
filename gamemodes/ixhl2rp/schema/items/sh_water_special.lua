@@ -8,7 +8,8 @@ ITEM.category = "Consumables"
 ITEM.functions.Drink = {
 	OnRun = function(itemTable)
 		local client = itemTable.player
-
+		local thirst = client:GetCharacter():GetData("thirst", 100)
+		client:SetThirst(math.Clamp(thirst,thirst+30, 100 ))
 		client:RestoreStamina(75)
 		client:SetHealth(math.Clamp(client:Health() + 10, 0, client:GetMaxHealth()))
 		client:EmitSound("npc/barnacle/barnacle_gulp2.wav", 75, 90, 0.35)

@@ -1,6 +1,6 @@
 
 ITEM.name = "Karta Dostępu"
-ITEM.model = Model("models/bioshockinfinite/hext_coin.mdl")
+ITEM.model = Model("models/dorado/tarjeta3.mdl")
 ITEM.description = "Plastikowa karta z czipem."
 ITEM.category = "Other"
 

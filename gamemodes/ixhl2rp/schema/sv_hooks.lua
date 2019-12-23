@@ -27,10 +27,12 @@ function Schema:PlayerUse(client, entity)
 	if (IsValid(client.ixScanner)) then
 		return false
 	end
-
 	if (client:IsCombine() and entity:IsDoor() and IsValid(entity.ixLock) and client:KeyDown(IN_SPEED)) then
 		entity.ixLock:Toggle(client)
 		return false
+	elseif entity:IsDoor() and IsValid(entity.ixLock) and entity.ixLock:GetClass()=="hl2_unionlock" and (client:GetCharacter():GetInventory():HasItem("unioncard") and !client:IsCombine() and client:KeyDown(IN_SPEED) ) then
+		entity.ixLock:Toggle(client)
+		return false		
 	end
 
 	if (!client:IsRestricted() and entity:IsPlayer() and entity:IsRestricted() and !entity:GetNetVar("untying")) then
