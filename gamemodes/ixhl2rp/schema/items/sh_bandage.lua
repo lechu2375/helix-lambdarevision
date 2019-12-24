@@ -24,10 +24,10 @@ ITEM.functions.useForward = {
 	sound = "items/medshot4.wav",
 	OnRun = function(itemTable)
 		local client = itemTable.player
-		local data = item.player:GetEyeTraceNoCursor()
+		local data = client:GetEyeTraceNoCursor()
 		local ent = data.Entity
 		if IsValid(ent) and ent:IsPlayer() and ent:Alive() then
-			client:SetHealth(math.min(client:Health() + 20, 100))
+			ent:SetHealth(math.min(ent:Health() + 20, 100))
 			return true
 		end
 		return false
@@ -36,8 +36,7 @@ ITEM.functions.useForward = {
 		if !IsValid(item.entity) and IsValid(item.player) and item.player:GetCharacter() then
 			local data = item.player:GetEyeTraceNoCursor()
 			local ent = data.Entity
-			local pos = data.endpos 
-			if (ent:IsPlayer() and 100>ent:Health()  item.player:GetPos():Distance(data.endpos)<=50) then
+			if (ent:IsPlayer() and 100>ent:Health() and item.player:GetPos():Distance(ent:GetPos())<=50) then
 				return true
 			else
 				return false
