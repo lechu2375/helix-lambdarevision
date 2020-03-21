@@ -90,7 +90,6 @@ if (SERVER) then
 	    end)
 		query:Execute()
 		local itemstr
-		print("ilosc lp wynosci"..lp)
 		if lp>=15 then
 			itemstr=self.Rations[2]
 		elseif lp>=45 then
