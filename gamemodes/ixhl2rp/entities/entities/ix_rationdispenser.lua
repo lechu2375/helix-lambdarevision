@@ -63,6 +63,18 @@ if (SERVER) then
 		self.dispenser:Activate()
 		self:DeleteOnRemove(self.dispenser)
 
+		self.dummy = ents.Create("prop_physics")
+		self.dummy:SetModel("models/weapons/w_package.mdl")
+		self.dummy:SetPos(self:GetPos())
+		self.dummy:SetAngles(self:GetAngles())
+		self.dummy:SetMoveType(MOVETYPE_NONE)
+		self.dummy:SetNotSolid(true)
+		self.dummy:SetNoDraw(true)
+		self.dummy:SetParent(self.dispenser, 1)
+		self.dummy:Spawn()
+		self.dummy:Activate()
+		self:DeleteOnRemove(self.dummy)
+
 		local physics = self.dispenser:GetPhysicsObject()
 		physics:EnableMotion(false)
 		physics:Sleep()
@@ -71,8 +83,9 @@ if (SERVER) then
 		self.nextUseTime = CurTime()
 	end
 
-	function ENT:SpawnRation(callback, releaseDelay,charid)
+	function ENT:SpawnRation(callback, releaseDelay)
 		releaseDelay = releaseDelay or 1.2
+releaseDelay = releaseDelay or 1.2
 		local lp = 0
 		local query = mysql:Select("hl2_lp")
 		query:Select("character_id")
@@ -97,47 +110,39 @@ if (SERVER) then
 		else
 			itemstr=self.Rations[1]
 		end
+		local itemTable = ix.item.Get(itemstr)
 
-		local item = ix.item.Spawn(itemstr, self:GetPos(), function(itemTable, entity)
-			if (callback) then
-				callback(entity)
-			end
+		self.dummy:SetModel(itemTable:GetModel())
+		self.dummy:SetNoDraw(false)
 
-			entity:SetMoveType(MOVETYPE_NONE)
-			entity:SetNotSolid(true)
-			entity:SetParent(self.dispenser, 1)
+		if (callback) then
+			callback()
+		end
 
+		timer.Simple(releaseDelay, function()
+			ix.item.Spawn(itemstr, self.dummy:GetPos(), function(item, entity)
+				self.dummy:SetNoDraw(true)
+			end, self.dummy:GetAngles())
+
+			-- display cooldown notice
 			timer.Simple(releaseDelay, function()
-				local physics = entity:GetPhysicsObject()
-
-				entity:SetMoveType(MOVETYPE_VPHYSICS)
-				entity:SetNotSolid(false)
-				entity:SetParent(nil)
-
-				if (IsValid(physics)) then
-					physics:EnableGravity(true)
-				end
-
-				-- display cooldown notice
-				timer.Simple(releaseDelay, function()
-					self:SetDisplay(5)
-				end)
-
-				-- make dispenser usable
-				timer.Simple(releaseDelay + 4, function()
-					self.canUse = true
-					self:SetDisplay(1)
-				end)
+				self:SetDisplay(5)
 			end)
-		end, self:GetAngles())
+
+			-- make dispenser usable
+			timer.Simple(releaseDelay + 4, function()
+				self.canUse = true
+				self:SetDisplay(1)
+			end)
+		end)
 	end
 
-	function ENT:StartDispense(ID)
+	function ENT:StartDispense()
 		self:SetDisplay(3)
 		self:SpawnRation(function()
 			self.dispenser:Fire("SetAnimation", "dispense_package")
 			self:EmitSound("ambient/machines/combine_terminal_idle4.wav")
-		end,1.2,ID)
+		end)
 	end
 
 	function ENT:DisplayError(id, length)
@@ -166,7 +171,7 @@ if (SERVER) then
 			end
 
 			local cid = client:GetCharacter():GetInventory():HasItem("cid")
-			local charid = client:GetCharacter():GetID()
+
 			if (!cid) then
 				self:DisplayError(7)
 				return
@@ -184,7 +189,7 @@ if (SERVER) then
 					self:EmitSound("ambient/machines/combine_terminal_idle3.wav")
 
 					timer.Simple(10.2, function()
-						self:StartDispense(charid)
+						self:StartDispense()
 						cid:SetData("nextRationTime", os.time() + ix.config.Get("rationInterval", 1))
 					end)
 				else
