@@ -1,4 +1,5 @@
 # helix-lambdarevision
+Not for use on  polish  servers without asking Lechu2375
 Posmysły/lista do roboty: https://github.com/lechu2375/helix-lambdarevision/projects/1
 
 Wszystko robimy w folderze schemy tj. https://github.com/lechu2375/helix-lambdarevision/tree/master/gamemodes/ixhl2rp 
